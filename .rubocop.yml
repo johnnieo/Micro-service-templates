@@ -1,0 +1,77 @@
+inherit_from:
+# - ./.rubocop_todo.yml
+
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'bin/*'
+    - 'vendor/**/*'
+    - 'script/**/*'
+    - 'db/**/*'
+    - 'spec/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+DotPosition:
+  EnforcedStyle: trailing
+
+Lint/EndAlignment:
+  AlignWith: variable
+
+Style/WordArray:
+  MinSize: 3
+
+Metrics/AbcSize:
+  Max: 45
+
+Metrics/ClassLength:
+  Description: 'Avoid classes longer than 100 lines of code.'
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 10 lines of code.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#short-methods'
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Max: 12
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+# Although this permits some unwanted usage, it doesn't allow use to use and/or in
+# the good cases as well, so we disable it here.
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/EachWithObject:
+  Description: 'Prefer `each_with_object` over `inject` or `reduce`.'
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/Semicolon:
+  # Allow ; to separate several expressions on the same line.
+  AllowAsExpressionSeparator: true
+
+# This cop suggests using `fail` instead of `raise` but the style guide itself suggests using `raise`.
+Style/SignalException:
+  Description: 'Use fail instead of raise to signal exceptions.'
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+

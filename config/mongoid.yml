@@ -1,0 +1,46 @@
+development:
+  clients:
+    default:
+      database: johnio_templates_development
+      hosts:
+        - localhost:27017
+      options:
+        write: { w: 1 }
+test:
+  clients:
+    default:
+      database: johnio_templates_test
+      hosts:
+        -  <%= ENV['MONGODB_HOST'] || 'localhost:27017' %>
+      options:
+        write: { w: 1 }
+
+staging:
+  clients:
+    default:
+      database: johnio_templates_staging
+      hosts:
+        - <%= ENV['MONGODB_TEMPLATES_MEMBER0_HOST'] %>
+        - <%= ENV['MONGODB_TEMPLATES_MEMBER1_HOST'] %>
+      options:
+        auth_mech: :mongodb_cr
+        user: <%= ENV['MONGODB_USERNAME'] %>
+        password: <%= ENV['MONGODB_PASSWORD'] %>
+        max_pool_size: 30
+        min_pool_size: 1
+        write: { w: 1 }
+
+production:
+  clients:
+    default:
+      database: johnio_templates_production
+      hosts:
+        - <%= ENV['MONGODB_TEMPLATES_MEMBER0_HOST'] %>
+        - <%= ENV['MONGODB_TEMPLATES_MEMBER1_HOST'] %>
+      options:
+        auth_mech: :mongodb_cr
+        user: <%= ENV['MONGODB_USERNAME'] %>
+        password: <%= ENV['MONGODB_PASSWORD'] %>
+        max_pool_size: 30
+        min_pool_size: 1
+        write: { w: 1 }

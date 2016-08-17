@@ -1,0 +1,21 @@
+# machine:
+#   services:
+#     - docker
+# dependencies:
+#   cache_directories:
+#     - mongodb-linux-x86_64-2.6.4
+#   pre:
+#     # start mongo
+#     - if [[ ! -d mongodb-linux-x86_64-2.6.4 ]]; then wget http://downloads.mongodb.org/linux/mongodb-linux-x86_64-2.6.4.tgz && tar xvzf mongodb-linux-x86_64-2.6.4.tgz; fi
+#     - sudo /etc/init.d/mongodb stop
+#     - sudo cp mongodb-linux-x86_64-2.6.4/bin/* /usr/bin
+#     - sudo /etc/init.d/mongodb start
+database:
+  override:
+    # replace CircleCI's generated mongoid.yml
+    - cp config/mongoid.yml.ci config/mongoid.yml
+test:
+  pre:
+    - bundle exec rubocop --rails --display-cop-names --display-style-guide
+  # post:
+  #   - ./bin/ecr_push.sh $CIRCLE_SHA1 $CIRCLE_PROJECT_REPONAME $CIRCLE_BRANCH
