@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     actionmailer (4.2.5.1)
       actionpack (= 4.2.5.1)
@@ -97,8 +98,6 @@ GEM
     haml (4.0.7)
       tilt
     hashdiff (0.3.0)
-    health-check (1.1.1)
-      rack (>= 1.4.5)
     highline (1.6.21)
     hiredis (0.6.0)
     http_logger (0.4.1)
@@ -230,8 +229,6 @@ GEM
       connection_pool (~> 2.2, >= 2.2.0)
       redis (~> 3.2, >= 3.2.1)
       sinatra (>= 1.4.7)
-    sidekiq-pro (3.3.1)
-      sidekiq (>= 4.0.0)
     simple_enum (2.1.1)
       activesupport (>= 4.0.0)
     simplecov (0.6.4)
@@ -291,7 +288,6 @@ DEPENDENCIES
   faraday (= 0.9.1)
   faraday_middleware (= 0.9.1)
   figaro (= 1.1.1)
-  health-check (= 1.1.1)
   hiredis (= 0.6.0)
   http_logger (= 0.4.1)
   letter_opener (= 1.2.0)
@@ -313,7 +309,6 @@ DEPENDENCIES
   rspec-rails (= 3.4.0)
   rubocop (= 0.40.0)
   sidekiq (= 4.1.4)
-  sidekiq-pro (= 3.3.1)
   simple_enum (= 2.1.1)
   simplecov (= 0.6.4)
   sinatra (= 1.4.7)

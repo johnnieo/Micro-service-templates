@@ -1,3 +1,4 @@
+source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'active_model_serializers', '0.8.3'
@@ -9,7 +10,7 @@ gem 'faraday', '0.9.1'
 gem 'faraday_middleware', '0.9.1'
 gem 'figaro', '1.1.1'
 gem 'hiredis', '0.6.0'
-gem 'health-check', '1.1.1', require: 'rack/health_check'
+#gem 'health-check', '1.1.1', require: 'rack/health_check'
 gem 'mongoid', '5.1.3'
 gem 'mongo', '2.2.7'
 gem 'multi_json', '1.11.2'
@@ -23,7 +24,7 @@ gem 'rails', '4.2.5.1'
 gem 'redis', '3.2.1', require: ['redis', 'redis/connection/hiredis']
 gem 'remote_syslog_logger', '1.0.3'
 gem 'sidekiq', '4.1.4'
-gem 'sidekiq-pro', '3.3.1'
+#gem 'sidekiq-pro', '3.3.1'
 gem 'simple_enum', '2.1.1'
 gem 'virtus', '1.0.5'
 
